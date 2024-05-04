@@ -2,11 +2,11 @@
 function getMastersDegreeUsers(users){
     try {
         let mastersDegreeUsers = [];
-        for(let user in users){
+        Object.keys(users).forEach( user => {
             if(users[user].qualification.includes("Masters")){
                 mastersDegreeUsers.push(user);
             }
-        }
+        })
         console.log(`User who have masters degree are: ${mastersDegreeUsers}`);
     } catch (error) {
         console.log(`Invalid input. ${error}`);
