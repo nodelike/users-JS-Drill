@@ -2,15 +2,13 @@
 function getVideoGameUsers(users){
     try {
         let videoGameUsers = [];
-
-        for(let user in users){
-            for(let interest of users[user].interests){
+        Object.keys(users).forEach( user => {
+            users[user].interests.forEach( interest => {
                 if(interest.includes("Video Games")){
                     videoGameUsers.push(user);
                 };
-            };   
-        }
-        
+            });
+        })
         console.log(`Users interested in video games are: ${videoGameUsers}`);
     } catch (error) {
         console.log(`Invalid input. ${error}`);
