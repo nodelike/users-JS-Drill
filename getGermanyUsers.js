@@ -2,11 +2,11 @@
 function getGermanyUsers(users){
     try {
         let germanyUsers = []
-        for(let user in users){
+        Object.keys(users).forEach( user => {
             if(users[user].nationality == "Germany"){
                 germanyUsers.push(user);
             }
-        }
+        })
         console.log(`Germany users are: ${germanyUsers}`);
     } catch (error) {
         console.log(`Invalid input. ${error}`);
