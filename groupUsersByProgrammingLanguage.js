@@ -2,15 +2,14 @@
 function groupUsersByProgrammingLanguage(users){
     const result = {"Python":[], "Golang":[], "Javascript":[]}
     try {
-        for(let user in users){
-            for(let language in result){
+        Object.keys(users).forEach( user => {
+            Object.keys(result).forEach( language => {
                 if(users[user].desgination.includes(language)){
                     result[language].push(user);
                 };
-            }
-        }
+            });
+        })
         console.log(result);
-        
     } catch (error) {
         console.log(`Invalid input. ${error}`);
     }
